@@ -3,7 +3,18 @@ set -eo pipefail; [[ -n "$PLUSHU_TRACE" ]] && set -x
 
 app="$1"
 app_dir="$PLUSHU_APPS_DIR/$app"
+logs_dir="$app_dir/logs"
 
-shopt -s nullglob globstar
+shopt -s nullglob
 
-cat "$app_dir/logs"/**.log
+if [[ -e "$logs_dir/build.log" ]]; then
+  cat "$logs_dir/build.log"
+fi
+
+if [[ -e "$logs_dir/release.log" ]]; then
+  cat "$logs_dir/release.log"
+fi
+
+for proclog in "$logs_dir/proc"/*.log; do
+  cat "$proclog"
+done
