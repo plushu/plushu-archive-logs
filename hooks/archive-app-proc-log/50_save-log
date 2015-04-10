@@ -5,4 +5,6 @@ app="$1"
 app_dir="$PLUSHU_APPS_DIR/$app"
 proc_name="$2"
 
+mkdir -p "$app_dir/logs/proc"
+
 cat > "$app_dir/logs/proc/$proc_name.log"

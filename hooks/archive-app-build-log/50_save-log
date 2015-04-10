@@ -4,4 +4,6 @@ set -eo pipefail; [[ -n "$PLUSHU_TRACE" ]] && set -x
 app="$1"
 app_dir="$PLUSHU_APPS_DIR/$app"
 
-cat > "$app_dir/logs/proc/build.log"
+mkdir -p "$app_dir/logs"
+
+cat > "$app_dir/logs/build.log"
