@@ -6,4 +6,4 @@ app_dir="$PLUSHU_APPS_DIR/$app"
 
 mkdir -p "$app_dir/logs"
 
-cat > "$app_dir/logs/build.log"
+cat >> "$app_dir/logs/build.log"

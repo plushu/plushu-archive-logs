@@ -7,4 +7,4 @@ proc_name="$2"
 
 mkdir -p "$app_dir/logs/proc"
 
-cat > "$app_dir/logs/proc/$proc_name.log"
+cat >> "$app_dir/logs/proc/$proc_name.log"
